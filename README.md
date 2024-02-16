@@ -1,6 +1,8 @@
 # Pixi-Pan-and-Zoom
 
 ## what I found
+the point is to draw all of the shapes inside **only one** graphic data, so all of them will be cached together.
+
 ```js
 let methods = {
     slow: {
