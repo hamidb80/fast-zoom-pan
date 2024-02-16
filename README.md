@@ -1,5 +1,33 @@
 # Pixi-Pan-and-Zoom
 
+## what I found
+```js
+let methods = {
+    slow: {
+        before: () => null,
+        inside: (ctx, x, y) => {
+            let testGraphic = new PIXI.Graphics()
+        
+            testGraphic.beginFill(0x000000)
+            testGraphic.lineStyle(2, 0xFF0000)
+            testGraphic.drawRect(x, y, 10, 10)
+        
+            graphicLayer.addChild(testGraphic)
+        },
+        after: () => null
+    },
+    fast: {
+        before: () => new PIXI.Graphics(),
+        inside: (ctx, x, y) => {
+            ctx.beginFill(0x000000)
+            ctx.lineStyle(2, 0xFF0000)
+            ctx.drawRect(x, y, 10, 10)
+        },
+        after: (ctx) => graphicLayer.addChild(ctx)
+    }
+}
+```
+
 ## What this is:
 - A quick and somewhat clean example of how to implement pan and zoom in PixiJS
 - A good place to build on these ideas and make the example better
